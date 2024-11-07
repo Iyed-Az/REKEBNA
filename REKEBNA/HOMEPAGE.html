@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REKEBNA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #161b28;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #0d1220;
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .signup-icon {
+            color: #fff;
+            font-size: 24px;
+            margin-left: auto;
+            margin-right: 30px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 100px 20px 20px;
+            box-sizing: border-box;
+            margin-top: 80px;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 40px;
+        }
+        section {
+            flex: 1;
+            margin: 0 10px;
+            text-align: center;
+        }
+        select,
+        input[type="date"],
+        input[type="time"],
+        input[type="number"],
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4285f4;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3367d6;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 40px;
+        }
+
+        .content-text {
+            flex: 1;
+            text-align: left;
+            padding-right: 20px;
+        }
+
+        .content-text img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .user-reviews {
+            flex: 1;
+            text-align: left;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+
+        .user-review {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            max-width: 60%; 
+        }
+
+        .user-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #4285f4;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .separator {
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+            margin: 40px 0;
+        }
+        footer {
+            background-color: #363b49;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            color: #fff;
+        }
+
+        footer nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        footer nav ul li {
+            margin: 10px 0;
+        }
+
+        footer nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: #adb5bd;
+        }
+        @media (max-width: 768px) {
+            form {
+                flex-direction: column;
+                align-items: center;
+            }
+            section {
+                flex: none;
+                width: 100%;
+                margin: 0 0 20px 0;
+            }
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .user-reviews {
+                padding-left: 0;
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>REKEBNA</h1>
+        <a href="LOGIN_PAGE.html" class="signup-icon"><i class="fas fa-user-plus"></i></a>
+    </header>
+
+    <main>
+        <img src="carpool_blablabus_large-e3d8eff32c13cdafc080.svg" alt="web pick" height="100%" width="100%" loading="eager" decoding="sync" fetchpriority="high">
+
+         <form id="searchForm" action="SEARCH_RESULTS.php" method="GET">
+            <section>
+                <label for="departure">Departure:</label>
+                <select id="departure" name="departure">
+                    <option value="Adrar">Adrar</option>
+                    <option value="Chlef">Chlef</option>
+                    <option value="Laghouat">Laghouat</option>
+                    <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                    <option value="Batna">Batna</option>
+                    <option value="Béjaïa">Béjaïa</option>
+                    <option value="Biskra">Biskra</option>
+                    <option value="Béchar">Béchar</option>
+                    <option value="Blida">Blida</option>
+                    <option value="Bouira">Bouira</option>
+                    <option value="Tamanrasset">Tamanrasset</option>
+                    <option value="Tébessa">Tébessa</option>
+                    <option value="Tlemcen">Tlemcen</option>
+                    <option value="Tiaret">Tiaret</option>
+                    <option value="Tizi Ouzou">Tizi Ouzou</option>
+                    <option value="Algiers">Algiers</option>
+                    <option value="Djelfa">Djelfa</option>
+                    <option value="Jijel">Jijel</option>
+                    <option value="Sétif">Sétif</option>
+                    <option value="Saïda">Saïda</option>
+                    <option value="Skikda">Skikda</option>
+                    <option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
+                    <option value="Annaba">Annaba</option>
+                    <option value="Guelma">Guelma</option>
+                    <option value="Constantine">Constantine</option>
+                    <option value="Médéa">Médéa</option>
+                    <option value="Mostaganem">Mostaganem</option>
+                    <option value="M'Sila">M'Sila</option>
+                    <option value="Mascara">Mascara</option>
+                    <option value="Ouargla">Ouargla</option>
+                    <option value="Oran">Oran</option>
+                    <option value="El Bayadh">El Bayadh</option>
+                    <option value="Illizi">Illizi</option>
+                    <option value="Bordj Bou Arréridj">Bordj Bou Arréridj</option>
+                    <option value="Boumerdès">Boumerdès</option>
+                    <option value="El Tarf">El Tarf</option>
+                    <option value="Tindouf">Tindouf</option>
+                    <option value="Tissemsilt">Tissemsilt</option>
+                    <option value="El Oued">El Oued</option>
+                    <option value="Khenchela">Khenchela</option>
+                    <option value="Souk Ahras">Souk Ahras</option>
+                    <option value="Tipaza">Tipaza</option>
+                    <option value="Mila">Mila</option>
+                    <option value="Aïn Defla">Aïn Defla</option>
+                    <option value="Naâma">Naâma</option>
+                    <option value="Aïn Témouchent">Aïn Témouchent</option>
+                    <option value="Ghardaïa">Ghardaïa</option>
+                    <option value="Relizane">Relizane</option>
+                    <option value="Timimoun">Timimoun</option>
+                    <option value="Bordj Badji Mokhtar">Bordj Badji Mokhtar</option>
+                    <option value="Ouled Djellal">Ouled Djellal</option>
+                    <option value="Béni Abbès">Béni Abbès</option>
+                    <option value="In Salah">In Salah</option>
+                    <option value="In Guezzam">In Guezzam</option>
+                    <option value="Touggourt">Touggourt</option>
+                    <option value="Djanet">Djanet</option>
+                    <option value="El M'Ghair">El M'Ghair</option>
+                    <option value="El Menia">El Menia</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="destination">Destination:</label>
+                <select id="destination" name="destination">
+                    <option value="Adrar">Adrar</option>
+                    <option value="Chlef">Chlef</option>
+                    <option value="Laghouat">Laghouat</option>
+                    <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                    <option value="Batna">Batna</option>
+                    <option value="Béjaïa">Béjaïa</option>
+                    <option value="Biskra">Biskra</option>
+                    <option value="Béchar">Béchar</option>
+                    <option value="Blida">Blida</option>
+                    <option value="Bouira">Bouira</option>
+                    <option value="Tamanrasset">Tamanrasset</option>
+                    <option value="Tébessa">Tébessa</option>
+                    <option value="Tlemcen">Tlemcen</option>
+                    <option value="Tiaret">Tiaret</option>
+                    <option value="Tizi Ouzou">Tizi Ouzou</option>
+                    <option value="Algiers">Algiers</option>
+                    <option value="Djelfa">Djelfa</option>
+                    <option value="Jijel">Jijel</option>
+                    <option value="Sétif">Sétif</option>
+                    <option value="Saïda">Saïda</option>
+                    <option value="Skikda">Skikda</option>
+                    <option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
+                    <option value="Annaba">Annaba</option>
+                    <option value="Guelma">Guelma</option>
+                    <option value="Constantine">Constantine</option>
+                    <option value="Médéa">Médéa</option>
+                    <option value="Mostaganem">Mostaganem</option>
+                    <option value="M'Sila">M'Sila</option>
+                    <option value="Mascara">Mascara</option>
+                    <option value="Ouargla">Ouargla</option>
+                    <option value="Oran">Oran</option>
+                    <option value="El Bayadh">El Bayadh</option>
+                    <option value="Illizi">Illizi</option>
+                    <option value="Bordj Bou Arréridj">Bordj Bou Arréridj</option>
+                    <option value="Boumerdès">Boumerdès</option>
+                    <option value="El Tarf">El Tarf</option>
+                    <option value="Tindouf">Tindouf</option>
+                    <option value="Tissemsilt">Tissemsilt</option>
+                    <option value="El Oued">El Oued</option>
+                    <option value="Khenchela">Khenchela</option>
+                    <option value="Souk Ahras">Souk Ahras</option>
+                    <option value="Tipaza">Tipaza</option>
+                    <option value="Mila">Mila</option>
+                    <option value="Aïn Defla">Aïn Defla</option>
+                    <option value="Naâma">Naâma</option>
+                    <option value="Aïn Témouchent">Aïn Témouchent</option>
+                    <option value="Ghardaïa">Ghardaïa</option>
+                    <option value="Relizane">Relizane</option>
+                    <option value="Timimoun">Timimoun</option>
+                    <option value="Bordj Badji Mokhtar">Bordj Badji Mokhtar</option>
+                    <option value="Ouled Djellal">Ouled Djellal</option>
+                    <option value="Béni Abbès">Béni Abbès</option>
+                    <option value="In Salah">In Salah</option>
+                    <option value="In Guezzam">In Guezzam</option>
+                    <option value="Touggourt">Touggourt</option>
+                    <option value="Djanet">Djanet</option>
+                    <option value="El M'Ghair">El M'Ghair</option>
+                    <option value="El Menia">El Menia</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="tripDate">Date:</label>
+                <input type="date" id="tripDate" name="tripDate">
+            </section>
+            <section>
+                <label for="passengerCount">Passengers:</label>
+                <input type="number" id="passengerCount" name="passengerCount" min="1" max="3" value="1">
+            </section>
+
+            <button type="submit" id="searchButton">Search</button>
+        </form>
+        <div class="separator"></div>
+
+        <div class="content">
+            <div class="content-text">
+                <h2>How It Works</h2>
+                <img src="driver-c3bdd70e6a29c6af9ef1 (1).svg" alt="How It Works Image"  height="1600px" width="1600px" loading="eager" decoding="async">
+                <p>Our carpooling platform<strong>"REKEBNA"</strong> offers a convenient way to share rides and reduce commuting costs. Simply sign up, create your profile, and either search for available rides or offer a ride yourself. Once you find a suitable match, book your seat or accept passengers for your journey. Coordinate details with your fellow carpoolers through our messaging system, meet at the designated spot, and enjoy the ride together. Afterward, rate your experience to help maintain a trusted community. Join us today to make your commute more affordable and eco-friendly!</p>
+            </div>
+            <div class="user-reviews">
+                <div class="user-review">
+                    <div class="user-icon">U</div>
+                    <div>
+                        <p>"Great experience! Found a ride quickly and easily."</p>
+                        <p>- John Doe</p>
+                    </div>
+                </div>
+                <div class="user-review">
+                    <div class="user-icon">U</div>
+                    <div>
+                        <p>"Excellent service. Highly recommended!"</p>
+                        <p>- Jane Smith</p>
+                    </div>
+                </div>
+                <div class="user-review">
+                    <div class="user-icon">U</div>
+                    <div>
+                        <p>"Smooth transactions. Love the convenience."</p>
+                        <p>- Alice Johnson</p>
+                    </div>
+                </div>
+                <div class="user-review">
+                    <div class="user-icon">U</div>
+                    <div>
+                        <p>"Efficient and affordable rides. Will use again!"</p>
+                        <p>- Michael Brown</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li>Contact: <br>Tel:05 57 22 24 81 OR 06 75 10 05 26<br>Mail: Support@REKEBNA.com<br>Address: sidi ammar Annaba 23000</li>
+                <li>Quick links: <br><a href="C:\xampp\htdocs\REKEBNA\LOGIN_PAGE.html">Register</a><br><a href="#message">Send a message</a><br><a href="#">Who are we</a></li>
+                <li>Miscellaneous information: <br><a href="#">Our partners</a><br><a href="#">Our regional headquarters</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+
+</body>
+</html>

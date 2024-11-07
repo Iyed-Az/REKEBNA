@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REKEBNA - User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #161b28;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Make sure body covers the viewport height */
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #0d1220;
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding-top: 140px;
+            width: 100%;
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-bottom: 60px;
+        }
+
+        .profile-section,
+        .journeys-section {
+            background-color: #0d1220;
+            color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            flex-basis: 45%; /* Adjust the width of each section */
+        }
+
+        .profile-section h2,
+        .journeys-section h2 {
+            color: #4285f4;
+        }
+
+        .star-rating {
+            color: gold;
+        }
+
+        .journey {
+            background-color: #161b28;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .journey button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .journey button:hover {
+            background-color: #3367d6;
+        }
+
+        footer {
+            background-color: #363b49;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            color: #fff;
+        }
+
+        footer nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        footer nav ul li {
+            margin: 10px 0;
+        }
+
+        footer nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: #adb5bd;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>REKEBNA</h1>
+        <i class="fas fa-user-circle signup-icon"></i>
+    </header>
+    <div class="main-content">
+        <div class="profile-section">
+            <h2>My Profile</h2>
+            <p>Evaluation: <span class="star-rating">★★★★☆</span></p>
+            <p>Experience: 2 ans</p>
+            <p>Driving category: Expert</p>
+            <p>Annulation / delay: 2/10</p>
+            <p>Contact: 05 57 22 24 81</p>
+            <p>Certified: Yes</p>
+        </div>
+        <div class="journeys-section">
+            <h2>My Journeys</h2>
+            <div class="journey">
+                <p>Date: 2/2/23</p>
+                <p>Duration: 8h</p>
+                <p>Route: Annaba/Setif</p>
+                <button><a href="MANAGE_DEMANDES.html">Manage</a></button>
+            </div>
+            <!-- Repeat for other journeys -->
+            <button><a href="PUBLISH-JOURNEY.html">New Journey</a></button>
+        </div>
+    </div>
+    <footer>
+        <nav>
+            <ul>
+                <li>Contact: <br>Tel:05 57 22 24 81 OR 06 75 10 05 26<br>Mail: Support@REKEBNA.com<br>Address: sidi ammar Annaba 23000</li>
+                <li>Quick links: <br><a href="C:\xampp\htdocs\REKEBNA\LOGIN_PAGE.html">Register</a><br><a href="#message">Send a message</a><br><a href="#">Who are we</a></li>
+                <li>Miscellaneous information: <br><a href="#">Our partners</a><br><a href="#">Our regional headquarters</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REKEBNA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #161b28;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #0d1220;
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            flex: 1;
+        }
+
+        .profile-selection {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+            background-color: #5cb85c;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-button:hover {
+            background-color: #4cae4c;
+        }
+
+        .login-container {
+            width: 300px;
+            background: #1e2432;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .login-container.show {
+            display: block;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #2b3247;
+            color: #fff;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #5cb85c;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+
+        footer {
+            background-color: #363b49;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            color: #fff;
+        }
+
+        footer nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        footer nav ul li {
+            margin: 10px 0;
+        }
+
+        footer nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: #adb5bd;
+        }
+        button[type="submit"]{
+            width: 100%;
+            padding: 10px;
+            background-color: #f69402;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>REKEBNA</h1>
+</header>
+
+<main>
+    <div class="profile-selection">
+        <button class="profile-button" onclick="showProfile('passager')">PASSAGER</button>
+        <button class="profile-button" onclick="showProfile('driver')">DRIVER</button>
+    </div>
+    <div class="login-container" id="passagerForm">
+        <h2>Passager Login</h2>
+        <form id="passagerLoginForm" onsubmit="return handleLogin('passager')" action="PASSAGER_login.php" method="post">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+            </div>
+            <div class="form-group">
+                <label for="age">age</label>
+                <input type="text" id="age" name="age" placeholder="Entrez votre prénom" required>
+            </div>
+            <button type="submit">Sign up</button>
+        </form>
+       
+    </div>
+    <div class="login-container" id="driverForm">
+        <h2>Driver Login</h2>
+        <form id="driverLoginForm" onsubmit="return handleLogin('driver')" action="CONDUCTEUR_LOGIN.php" method="post">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre</label>
+                <select id="genre" name="genre" required>
+                    <option value="male">Homme</option>
+                    <option value="female">Femme</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date_naissance">Date de naissance</label>
+                <input type="date" id="date_naissance" name="date_naissance" required>
+            </div>
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <nav>
+        <ul>
+            <li>Contact: <br>Tel:05 57 22 24 81 OR 06 75 10 05 26<br>Mail: Support@REKEBNA.com<br>Address: sidi ammar Annaba 23000</li>
+            <li>Quick links: <br><a href="C:\xampp\htdocs\REKEBNA\LOGIN_PAGE.html">Register</a><br><a href="#message">Send a message</a><br><a href="#">Who are we</a></li>
+            <li>Miscellaneous information: <br><a href="#">Our partners</a><br><a href="#">Our regional headquarters</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<script>
+    function showProfile(profile) {
+        document.querySelectorAll('.login-container').forEach(function(el) {
+            el.classList.remove('show');
+        });
+        document.getElementById(profile + 'Form').classList.add('show');
+    }
+
+   
+</script>
+
+</body>
+</html>
